@@ -1,0 +1,137 @@
+/* -------------공통사항------------- */
+
+*{
+    margin:0;
+    padding:0;  
+}
+li{
+    list-style: none;
+}
+li::marker{
+    color:rgb(17, 164, 140);
+    font-size: 2rem;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+img{
+    vertical-align: middle;
+}
+.clearFix::after{
+    content:"";
+    display: block;
+    clear:both;
+}
+body{
+    font-family: '아리따-돋움4.0(OTF)', sans-serif;
+    font-size: 17px;
+    color:black;
+    line-height: 1;
+}
+.innerBox{
+    max-width:1300px;
+    margin:0 auto;
+    /* background-color: pink; */
+    position: relative;
+}
+/* ---------------header---------------- */
+.logo img{
+    width:40%;
+}
+header{
+    width:100%;
+    position:relative;
+}
+.head{
+    display: flex;
+}
+.mainMenu{
+    display: flex;
+    position: absolute;
+    right:0;
+    padding-top: 50px;
+}
+.mainMenu>li{
+    padding: 0 20px;
+}
+.mainMenu>li:hover a{
+    color:rgb(13, 156, 120);
+}
+
+/* ----------homeContent--------- */
+.home{
+    text-align: center;
+}
+.welcome{
+    width:800px;
+    height:110px;
+    background-color: rgb(10, 98, 83);
+    border:10px solid rgb(216, 238, 213);
+    border-radius: 80px;
+    margin:0 auto;
+    margin-top: 30px;
+}
+.welcome>p{
+    color:rgb(255, 234, 0);
+    line-height: 110px;
+    font-size: 50px;
+}
+.home>.text{
+    line-height: 1.8;
+    width:450px;
+    height:140px;
+    background-color: rgb(255, 255, 174);
+    margin:0 auto;
+
+}
+.textArea{
+    padding-top: 20px;
+}
+.arrow img{
+    width:9%;
+}
+.arrow{
+    text-align: center;
+    margin-top: 20px;
+    position:relative;
+    top:0;
+    animation-name: downArrow;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+@keyframes downArrow{
+    0%{ 
+        top:0px;
+    }
+    100%{
+        top:20px;
+    }
+}
+
+/* --------------about------------- */
+.about{
+    margin-top: 180px;
+}
+h2{
+    margin:30px 0;
+    text-align: center;
+}
+.aboutContent img{
+    width:80%;
+}
+.aboutContent{
+    display: flex;
+}
+.aboutContent>.text{
+    padding-top: 20px;
+    line-height: 2.0;
+}
+.aboutContent li{
+    text-decoration: underline;
+    text-decoration-color: rgb(17, 164, 140);
+    text-underline-position: under;
+    list-style: disc;
+}
