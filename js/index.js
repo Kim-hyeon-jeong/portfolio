@@ -1,5 +1,4 @@
 window.onload = function(){
- // Scroll Animation (sa, 스크롤 애니메이션)
  const saTriggerMargin = 300;
  const saElementList = document.querySelectorAll(".sa");
  console.log(saElementList);
@@ -16,31 +15,20 @@ window.onload = function(){
  window.addEventListener('load', saFunc);
  window.addEventListener('scroll', saFunc);
 
- $('.btn_gotop').click(function(){
-	$('html, body').animate({scrollTop:0},400);
-	return false;
-});
-$('.homeBtn').click(function(){
-	$('html, body').animate({scrollTop:0},400);
-	return false;
-});
-$('.about').click(function(){
-	$('html, body').animate({scrollTop:600},400);
-	return false;
-});
-$('.publish').click(function(){
-	$('html, body').animate({scrollTop:1450},400);
-	return false;
-});
-$('.contact').click(function(){
-	$('html, body').animate({scrollTop:2600},400);
-	return false;
-});
-// $(window).scroll(function () {
-//   var height = $(document).scrollTop();
-//   console.log(height);	
-// });
+ const content = "Welcome to my Portfolio!";
+ const text = document.querySelector(".text1");
+ let i = 0;
+ 
+ function typing(){
+	 if (i < content.length) {
+	 let txt = content.charAt(i);
+	 text.innerHTML += txt;
+	 i++;
+	 }
+ }
+ setInterval(typing, 200)
 }
+
 $(function(){
 	let wWidth = $(window).outerWidth();
     
@@ -65,4 +53,25 @@ $(function(){
 			$(".bg, .mainMenu").removeClass("active");
 		}
 	})
+	$('.homeBtn').click(function(){			
+		var offset = $('.div1').offset(); //선택한 태그의 위치를 반환               
+		 //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 	       
+		$('html').animate({scrollTop : offset.top}, 400);		
+	});
+	$('.about').click(function(){			
+		var offset2 = $('.div2').offset(); //선택한 태그의 위치를 반환               
+		 //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 	       
+		$('html').animate({scrollTop : offset2.top}, 400);		
+	});
+	$('.publish').click(function(){			
+		var offset3 = $('.div3').offset(); //선택한 태그의 위치를 반환               
+		 //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 	       
+		$('html').animate({scrollTop : offset3.top}, 400);		
+	});
+	$('.contact').click(function(){			
+		var offset4 = $('.div4').offset(); //선택한 태그의 위치를 반환               
+		 //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 	       
+		$('html').animate({scrollTop : offset4.top}, 400);		
+	});
+
 })

@@ -84,12 +84,22 @@ header{
     margin:0 auto;
     margin-top: 30px;
 }
-.welcome>p{
+.welcome>span{
     color:rgb(255, 234, 0);
     line-height: 110px;
     font-size: 50px;
 }
-.home>.text{
+.blink {
+    animation: blink 0.5s infinite;
+    font-size: 2.5rem;
+  }
+  
+  @keyframes blink {
+    to {
+      opacity: 0;
+    }
+  }
+.home>.textBox{
     line-height: 1.8;
     width:40%;
     height:140px;
@@ -416,6 +426,15 @@ figure.snip1384.hover i {
     opacity: 1;
     transform: none;
   }
+.animated-title {position:relative; 100%;max-width:100%; height: auto; padding:100px 0; overflow-x: hidden; overflow-y: hidden; }
+.animated-title .track {position: absolute; white-space: nowrap;will-change: transform;animation: marquee 40s linear infinite; }
+@keyframes marquee {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+}
+@media (hover: hover){
+.animated-title .content {-webkit-transform: translateY(calc(100% - 8rem)); transform: translateY(calc(100% - 8rem));}
+    }
 
 /*-------반응형-------  */
 @media screen and (max-width:1600px){
@@ -442,15 +461,15 @@ figure.snip1384.hover i {
     }
 }
 @media screen and (max-width:880px){
-    .welcome>p {
+    .welcome>span {
         font-size: 40px;
     }
-    .home>.text {
+    .home>.textBox {
         width:50%;
     }
 }
 @media screen and (max-width:767px){
-    .welcome>p {
+    .welcome>span {
         font-size: 30px;
     }
     .welcome {
@@ -518,16 +537,23 @@ figure.snip1384.hover i {
     .bg.active{
         right:0;
     }
+    .animated-title {
+        padding: 50px 0;
+    }
+    .animated-title .content{
+        transform: translateY(calc(100% - 5rem));
+        font-size: 50px;
+    }
 }
 @media screen and (max-width:560px){
-    .welcome>p {
+    .welcome>span {
         font-size: 25px;
         line-height: 90px;
     }
     .welcome {
         height:90px;
     }
-    .home>.text {
+    .home>.textBox {
         width: 60%;
     }
     .textArea>p {
@@ -557,7 +583,7 @@ figure.snip1384.hover i {
     .textArea>p {
         font-size: 10.5px;
     }
-    .home>.text {
+    .home>.textBox {
         height:120px;
     }
     figure.snip1384 p {
@@ -568,5 +594,9 @@ figure.snip1384.hover i {
     }
     .contact>.text>p{
         font-size: 12px;
+    }
+    .animated-title .content {
+        transform: translateY(calc(100% - 3.5rem));
+        font-size: 35px;
     }
 }
